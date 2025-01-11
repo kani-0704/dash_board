@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Portal Dashboard</title>
+  <style>
+  body {
+            font-family: Arial, sans-serif;
+            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQBBwMBIgACEQEDEQH/xAAaAAACAwEBAAAAAAAAAAAAAAABAgADBAUG/8QAJhAAAgEFAAMAAQQDAAAAAAAAAAECAxESE2EhQVExUnGRoWKx8P/EABsBAAMBAQEBAQAAAAAAAAAAAAECAwAEBQYH/8QAGxEBAQEBAQEBAQAAAAAAAAAAAAECEhEDEzH/2gAMAwEAAhEDEQA/APcxRZFEiixI8D6V35RED4Ijk1/VoA1iEEMBEghHkChYmI6QyRbET0rUQSgX2QVFM7fk59scqZTOmdGVMqnTR6nw145PpHKq0jLUpnXnTMtWket8duH6ZcmpTM06Z1KtMzVKZ6Xz24t5c6UCmUfJunAplA6s6c+ssjiK4mlwFwKzXiVyz4kxNGsms3Ycs+IcTRrJrN0PLPiTE0a+E18N23LPiTE0ayaw9Nyy4gxNWvgrpm6DhmxAaNZBui8vdxiOo8GUQ4/uflf0j7rNJZEsh8QOJy6yrKXwSw2IUheR9BIKimMojxgPnJbSqI6jwdRHVPrOjGUrosYcGw4WRgPgdWIlqqHC/oSVNfDVgBwO351DTBOmvhmqUuHTnAyzp/ueh8tObccqtS4ZKtPh16tMyVKZ6Pz2495cmdMplTOlOmUypnXnbn1hznTBrNzpi6ivafLHrJr4bNQdfDdtwx6yazZqCqRu24Y1SJrNqpcDq4DseGLUTUbtfCa+G/RuHP1gdPh0NXBXS4GfQOHOdPhDc6XCDfoHD1qi/gcS+wMen559I+qzpQ0/gMS/EGJzXKk0pxCov4W4jKHBeW7VqI6jwdRQ8UNMkuyxi/hYkFIZWLZid0CT9K46T9qxEOjpzCXRbCtP9JbdAZ1YJWeUSipA2SRVOPTsxUtRz6kH8M1Snf0dKcTPOB2Y259ZcydPhTKlw6c6fxFUqXDoz9EblznR4Lqfw6Dp8BqKfoXhg1cDqfw3aiazfoHDFqfwKpP4bdXBlS4D9B4YtXCauG7XwOngP0Hhh1B1G7VwmrgP1HhgdLgjpcOk6XBHS4GfQLhzZUuEN7pcIN+gcO4lcOC+CxLPR8jvL1pslgOK+D+b+CefZC5P2TFfApDCP9xeW7GwyFuS4Zkl2cZW+FXn2/6HTKSE6WqwyKlf07Dxv7dy2Q6PZfA2IvwCzv8An+joyPpWhHBfC1IjXw6c0tZpQKpU0/RqcX7/ANCOBbOk7GOVPgjpm1wuV6ys2S5Y9XCauGzADpjfoHLJqJq4atbGwN23LIqQdRq1k12B23DMqX7DKmacCYP/AJA7NwzaiauGpQJrB23LJqFdI1uEgOIZtuGF0/hDVKAR5svBlIdSv4sZ4zHUjwtQ82uuBsrzJkSsN2fIFyvIVz8g8btZkRSKsg5G8L0tyGUilSGTDA6XxkWpmeLLYseGlWpsdCRGTL5p5TAvf0HwGxbNEthZL6iwhWVlNr/hAcS9q/AWG6DxRa3omJdiiWN03inBAsn+EX48Jbhum8UqIcberltiWNdD4qtwOJZZEsLdj4rsCw5AdjyrsK1b0WuwkjTbcqWr+iDSIPNl5c2MixTMimOpnl9OGbaciZFGYHMBulzkLkVOoDMzdrsiZFGZFMHodNCaLIyMymOpA9Gaaky2Dt+DJCRdGQ0p5WuD8DpIzwnwui/BXNVlXIb8lSkMm/haU8plFekMgJku/RSURsmDBBTfsIfRBKyI0Tz6QUbofC4LoQ3EbkvQLofEcbkSsG4spP0hLsZBYjSA3J+gN/RLs3JkBu4jk/guT+C9jyZpAbEchJT+G7bkZMhTKb9hG7Ly48ZDKZQmNc4/XiTS/MGZTclw+m7WuQuZW2C5vQ6XZByKbhuD1ul8ZFikZkyyMgemlaoyLYyMcZFsZGlVmmyMy6M19RjhItjMpKpNNkZIdS6ZYzQ6mWlWlaVJfRkzOpDqQ8p5V10vy/5Jkv1IryIpIPRouv0GVhMiZIF0c2S+oGXkrckK5iXZpFjmk/yI5p/h/wAFcporcyd2eZWufRHUXtoqlMRzRK/RSZXZ39iufSlzFcxL9DcrXU6hHMqchHIH6tyslMhRJkDPqHDm3GyK0wpgfLyrFIDYjZAia5Li3Bc3oenuFMruG4PW9WpjJlKkMmY0rRGRZGRmjIdSN6eVqjMsjPwZFIZVGNKpNNqqFkZ/5GKNQdVCk0rNN0angZT7Ywqqx1VKSrTTcp9uHMxqqFVWHpXNbM/8iZmZVPAHUJ3a2WhzK5Tf6mUuoJKZLX0WzFzmVymUuYrmR19FZla5gcirIGRG/RSZWOQuQmRLk/0N4ZsVi3ZAfoPgEIyB/Shy5SkOpGdSGUj0LHxcq+4blSkFMUfVgBbkuYTBuJclwMe4Uyu4bmb1apDKRRcNzGlaFMZS8mZSGUgnlaVIZTMykOpDSqytGYyqGdMZMPS+a0xqDqZmiWpk79HTiL1ImRUgkdfV14hnIRyA2JYlfovnJnIFwAJ3a0g3CAJO08iEAQBvBAAIGQhCBZwEMQh7WnwlMmOiEJU0EhCGGCAhDMgSEMyXImQhmiXGTAQ0PlYh0EgVsmQ8QkBXThZEsRCENOvB0BkIc1/rrwUhCCV05BgQSAUiAIQBhIQgDAEhAghCENAf/9k='); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 20px;
+            color: black; 
+        }
+
+    header {
+       background-image: url('data:image/jpeg;base64,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');
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .sidebar {
+      width: 200px;
+      background: #2980b9;
+      color: rgb(255, 255, 255);
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      padding: 15px;
+    }
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+    }
+    .sidebar a:hover, .sidebar a.active {
+      background: #1abc9c;
+    }
+    .main-content {
+      margin-left: 220px;
+      padding: 20px;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .dashboard-stat {
+
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .stat-box {
+      width: 30%;
+      background: rgb(185, 200, 241);
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      text-align: center;
+    }
+ 
+    
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #e9f7fc;
+    }
+    .login-box {
+      background-image: url('data:image/jpeg;base64,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');
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+    .login-box h2 {
+      text-align: center;
+     
+    }
+    .login-box input {
+      
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Login Page -->
+  <div id="login-page" class="login-container">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form action="#dashboard" method="post">
+        <input type="text" id="username" name="username" placeholder="Username" required><br>
+        <input type="password" id="password" name="password" placeholder="Password" required><br>
+        <input type="text" id="Email" name="Email" placeholder="Email" required><br>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Job Portal Dashboard (Visible after login) -->
+  <div id="dashboard-page" style="display: none;">
+    <header>
+      <h1>Job Portal Dashboard</h1>
+    </header>
+
+    <div class="sidebar">
+      <h3>Navigation</h3>
+      <a href="#dashboard" onclick="openTab(event, 'dashboard')" class="active">Dashboard</a>
+      <a href="#job-listings" onclick="openTab(event, 'job-listings')">Job Listings</a>
+      <a href="#candidate-dashboard" onclick="openTab(event, 'candidate-dashboard')">Candidate Dashboard</a>
+      <a href="#employer-dashboard" onclick="openTab(event, 'employer-dashboard')">Employer Dashboard</a>
+      <a href="#application-process" onclick="openTab(event, 'application-process')">Application Process</a>
+      <a href="#email-notification" onclick="openTab(event, 'email-notification')">Email Notifications</a>
+    </div>
+
+    <div class="main-content">
+      <div id="dashboard" class="tab-content active">
+        <h2>Welcome to Your Dashboard</h2>
+        <div class="dashboard-stat">
+          <div class="stat-box">
+            <h3>10</h3>
+            <p>Active Jobs</p>
+          </div>
+          <div class="stat-box">
+            <h3>25</h3>
+            <p>Applications Submitted</p>
+          </div>
+          <div class="stat-box">
+            <h3>5</h3>
+            <p>Interviews Scheduled</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- The rest of the dashboard content remains unchanged -->
+      <div id="job-listings" class="tab-content">
+        <h2>Job Listings</h2>
+        <form action="#dashboard" method="post">
+      <div>
+        <h3>Software Engineer</h3>
+        <p>Company: XYZ Corp.</p>
+        <p>Required Skills: Python, Java, C++.</p>
+        <p>Experience Level: Senior.</p>
+        <p>Job Type: Full-time,Remote.</p>
+     
+      </div>
+      <div>
+       
+        <h3>Data Analyst</h3>
+        <p>Company: ABC Inc.</p>
+        <p>Required Skills: SQL,Tableau, Python.</p>
+        <p>Experience Level: Junior.</p>
+        <p>Job Type: Full-time,On-site.</p>
+      </div>
+     
+    <div>
+    <h3>Web Developer</h3>
+        <p>Company: ABC Inc.</p>
+        <p>Required Skills:  HTML, CSS, JavaScript.</p>
+        <p>Experience Level: Senior,Junior.</p>
+        <p>Job Type: Full-time,FreLance.</p>
+      </div>
+     
+     <div>
+    <h3>Machine Learning Engineer</h3>
+        <p>Company: ABC Inc.</p>
+       
+        <p>Required Skills:  Python or R.</p>
+        <p>Experience Level: Senior,Junior.</p>
+        <p>Job Type: Full-time,FreLance.</p>
+      </div>
+     
+      <div>
+    <h3>Cybersecurity Analyst/Engineer</h3>
+        <p>Company: ABC Inc.</p>
+       
+        <p>Required Skills:  security protocols, firewalls, and encryption.</p>
+        <p>Experience Level: Senior,Junior.</p>
+        <p>Job Type: Full-time.</p>
+      </div>
+     
+      <div>
+    <h3> Game Developer</h3>
+        <p>Company: ABC Inc.</p>
+       
+        <p>Required Skills: Unity, Unreal Engine.</p>
+        <p>Experience Level: Senior,Junior.</p>
+        <p>Job Type: Full-time,Remote.</p>
+      </div>
+     
+      <div>
+    <h3>  Cloud Engineer</h3>
+        <p>Company: ABC Inc.</p>
+       
+        <p>Required Skills: AWS,Azure, Google Cloud.</p>
+        <p>Experience Level: Senior,Junior.</p>
+        <p>Job Type:Full-time,Remote.</p>
+      </div>
+     
+      <div>
+    <h3>Database Administrator</h3>
+        <p>Company: ABC Inc.</p>
+       
+        <p>Required Skills:  MySQL, PostgreSQL, MongoDB, etc.</p>
+        <p>Experience Level: Senior,Junior.</p>
+        <p>Job Type:Full-time.</p>
+      </div>
+     
+      <div>
+    <h3> AI Researcher</h3>
+        <p>Company: ABC Inc.</p>
+       
+        <p>Required Skills:  Python, C++, Java.</p>
+        <p>Experience Level: Senior,Junior.</p>
+        <p>Job Type:Full-time,Remote.</p>
+      </div>
+        <div>
+    <h3> Network Engineer</h3>
+        <p>Company: ABC Inc.</p>
+       
+        <p>Required Skills:  routers, switches, firewalls.</p>
+        <p>Experience Level: Senior,Junior.</p>
+        <p>Job Type:Full-time.</p>
+      </div>
+      </form>
+      </div>
+
+      <div id="candidate-dashboard" class="tab-content">
+        <h2>Candidate Dashboard</h2>
+       <ul>
+        <li>Software Engineer - XYZ Corp. </li>
+        <li>Data Analyst - ABC Inc.</li>
+        <li>Web Developer- ABC Inc.</li>
+        <li>Machine Learning Engineer - ABC Inc.</li>
+        <li>Cybersecurity Analyst/Engineer - ABC Inc.</li>
+        <li>Game Developer- ABC Inc.</li>
+        <li>Cloud Engineer- ABC Inc.</li>
+        <li>Database Administrator - ABC Inc.</li>
+        <li>AI Researcher - ABC Inc.</li>
+        <li>Network Engineer- ABC Inc.</li>
+      </ul>
+      </div>
+
+      <div id="employer-dashboard" class="tab-content">
+        <h2>Employer Dashboard</h2>
+        <form action="#dashboard" method="post">
+            </form>
+        <div>
+    <h3>Software Engineer - XYZ Corp.</h3>
+    <form action="#dashboard" method="post" enctype="multipart/form-data">
+      <label for="resume-upload-se">Choose a resume for Software Engineer:</label>
+      <br>
+      <input type="file" id="resume-upload-se" name="resume-se" accept=".pdf, .doc, .docx" required>
+      <br>
+      <button type="submit">Upload Resume</button>
+    </form>
+  </div>
+
+  <div>
+    <h3>Data Analyst - ABC Inc.</h3>
+    <form action="#dashboard" method="post" enctype="multipart/form-data">
+      <label for="resume-upload-da">Choose a resume for Data Analyst:</label>
+      <br>
+      <input type="file" id="resume-upload-da" name="resume-da" accept=".pdf, .doc, .docx" required>
+      <br>
+      <button type="submit">Upload Resume</button>
+    </form>
+  </div>
+
+  <div>
+    <h3>Web Developer - ABC Inc.</h3>
+    <form action="#dashboard" method="post" enctype="multipart/form-data">
+      <label for="resume-upload-wd">Choose a resume for Web Developer:</label>
+      <br>
+      <input type="file" id="resume-upload-wd" name="resume-wd" accept=".pdf, .doc, .docx" required>
+      <br>
+      <button type="submit">Upload Resume</button>
+    </form>
+  </div>
+
+  <div>
+    <h3>Machine Learning Engineer - ABC Inc.</h3>
+    <form action="#dashboard" method="post" enctype="multipart/form-data">
+      <label for="resume-upload-ml">Choose a resume for Machine Learning Engineer:</label>
+      <br>
+      <input type="file" id="resume-upload-ml" name="resume-ml" accept=".pdf, .doc, .docx" required>
+      <br>
+      <button type="submit">Upload Resume</button>
+    </form>
+  </div>
+
+  <div>
+    <h3>Cybersecurity Analyst/Engineer - ABC Inc.</h3>
+    <form action="#dashboard" method="post" enctype="multipart/form-data">
+      <label for="resume-upload-ca">Choose a resume for Cybersecurity Analyst:</label>
+      <br>
+      <input type="file" id="resume-upload-ca" name="resume-ca" accept=".pdf, .doc, .docx" required>
+      <br>
+      <button type="submit">Upload Resume</button>
+    </form>
+  </div>
+
+  <div>
+    <h3>Game Developer - ABC Inc.</h3>
+    <form action="#dashboard" method="post" enctype="multipart/form-data">
+      <label for="resume-upload-gd">Choose a resume for Game Developer:</label>
+      <br>
+      <input type="file" id="resume-upload-gd" name="resume-gd" accept=".pdf, .doc, .docx" required>
+      <br>
+      <button type="submit">Upload Resume</button>
+    </form>
+  </div>
+
+  <div>
+    <h3>Cloud Engineer - ABC Inc.</h3>
+    <form action="#dashboard" method="post" enctype="multipart/form-data">
+      <label for="resume-upload-ce">Choose a resume for Cloud Engineer:</label>
+      <br>
+      <input type="file" id="resume-upload-ce" name="resume-ce" accept=".pdf, .doc, .docx" required>
+      <br>
+      <button type="submit">Upload Resume</button>
+    </form>
+  </div>
+
+  <div>
+    <h3>Database Administrator - ABC Inc.</h3>
+    <form action="#dashboard" method="post" enctype="multipart/form-data">
+      <label for="resume-upload-db">Choose a resume for Database Administrator:</label>
+      <br>
+      <input type="file" id="resume-upload-db" name="resume-db" accept=".pdf, .doc, .docx" required>
+      <br>
+      <button type="submit">Upload Resume</button>
+    </form>
+  </div>
+
+  <div>
+    <h3>AI Researcher - ABC Inc.</h3>
+    <form action="#dashboard" method="post" enctype="multipart/form-data">
+      <label for="resume-upload-ar">Choose a resume for AI Researcher:</label>
+      <br>
+      <input type="file" id="resume-upload-ar" name="resume-ar" accept=".pdf, .doc, .docx" required>
+      <br>
+      <button type="submit">Upload Resume</button>
+    </form>
+  </div>
+
+  <div>
+    <h3>Network Engineer - ABC Inc.</h3>
+    <form action="#dashboard" method="post" enctype="multipart/form-data">
+      <label for="resume-upload-ne">Choose a resume for Network Engineer:</label>
+      <br>
+      <input type="file" id="resume-upload-ne" name="resume-ne" accept=".pdf, .doc, .docx" required>
+      <br>
+      <button type="submit">Upload Resume</button>
+    </form>
+  </div>
+<br>
+<br>
+      <form action="#job-listings" method="post">
+        <label for="job-title">Job Title:</label>
+        <input type="text" id="job-title" name="job-title" required>
+        <button type="submit">Post Job</button>
+      </form>
+    </div>
+
+      <div id="application-process" class="tab-content">
+        <h2>Job Application Process</h2>
+       <h2>Job Application Process</h2>
+      <h3>Step 1: Apply</h3>
+      <p>Submit your resume and cover letter for the job you're interested in.</p>
+      <h3>Step 2: Interview</h3>
+      <p>If selected, you will be invited for an interview.</p>
+      <h3>Step 3: Offer</h3>
+      <p>If you pass the interview, you'll receive a job offer!</p>
+      </div>
+
+      <div id="email-notification" class="tab-content">
+        <h2>Email Notification</h2>
+        <p>You have successfully applied for the Software Engineer position at XYZ Corp.</p>
+        <p>You'll receive an email notification when your application is reviewed.</p>
+      </div>
+    </div>
+
+  <script>
+    
+    function showDashboard() {
+      document.getElementById("login-page").style.display = "none";
+      document.getElementById("dashboard-page").style.display = "block";
+    }
+
+
+    const loginForm = document.querySelector(".login-box form");
+    loginForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+      showDashboard();
+    });
+
+    function openTab(evt, tabName) {
+      var i, tabContent, sidebarLinks;
+
+      
+      tabContent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].classList.remove("active");
+      }
+
+      sidebarLinks = document.querySelectorAll(".sidebar a");
+      for (i = 0; i < sidebarLinks.length; i++) {
+        sidebarLinks[i].classList.remove("active");
+      }
+
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
+
